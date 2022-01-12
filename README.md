@@ -5,6 +5,10 @@ To write a program to perform selection sort and insertion sort using python pro
 1.	Hardware – PCs
 2.	Anaconda – Python 3.7 Installation / Moodle-Code Runner
 ## Algorithm:
+1. Get the list of nums as input.
+2. Use the sort() function to find selection sort and insertion sort.
+3. Print the value.
+
 ## Selection Sort Algorithm:
 1.	Set the first unsorted element as the minimum
 2.	For each of the unsorted elements, check if the element < current minimum.
@@ -20,23 +24,42 @@ To write a program to perform selection sort and insertion sort using python pro
 ## Program:
 i)	#Selection Sort
 ```
-
-
-
-
+def selection_sort(nums):
+    for i in range(len(nums)):
+        low_index=i
+        for j in range(i+1,len(nums)): 
+            if nums[j]<nums[low_index]:
+                low_index=j
+        nums[i],nums[low_index]=nums[low_index],nums[i]
+    return nums
+list_of_nums=eval(input())
+value=selection_sort(list_of_nums)
+print(value)
 
 ```
 ii)	#Insertion Sort
 ```
+def insertion_sort(nums):
+    for i in range(1,len(nums)):
+        item=nums[i]
+        j=i-1
+        while j>=0 and nums[j]>item:
+            nums[j+1]=nums[j]
+            j-=1
+        nums[j+1]=item
+    return nums
+list_of_nums = eval(input())
 
-
-
-
-
+value=insertion_sort(list_of_nums)
+print(value)
 
 ```
 
 ## Output:
+## Selection sort:
+![output](./answer-1.png)
+## Insertion sort:
+![output](./answer-2.png)
 
 
 ## Result:
